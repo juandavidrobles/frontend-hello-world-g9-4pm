@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17 de septiembre de 2021</title>
+</head>
+<body>
+  <h1>Bienvenidos</h1>
+  <p>Saludos desde el servidor: 
+    <span id="message"></span>
+  </p>
+  <script>
+    const message = document.getElementById("message");
+    fetch('http://localhost:5000/hola')
+      .then((response) => response.json())
+      .then(r => {
+        message.innerHTML = r.message;
+      });
+  </script>
+</body>
+</html>
